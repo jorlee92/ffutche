@@ -21,5 +21,6 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
  #   path('', include('home.urls')),
-    re_path(r'^(?P<path>.*)$', serve , { 'document_root': settings.FRONTEND_ROOT})
+    path('api/', include('home.api.url')),
+    # re_path(r'^(?P<path>.*)$', serve , { 'document_root': settings.FRONTEND_ROOT}),
 ]
